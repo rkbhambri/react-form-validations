@@ -19,58 +19,22 @@ class Signup extends Component {
 
     inputChangeHandler = (event) => {
         const element = event.target.name;
-        let isFirstNameValid = this.state.isFirstNameValid;
-        let isLastnameValid = this.state.isLastnameValid;
-        let isEmailVald = this.state.isEmailVald;
-        let isPasswordValid = this.state.isPasswordValid;
-
-        if (element === 'firstname') {
-            isFirstNameValid = validateFirstname(event.target.value);
-        }
-        if (element === 'lastname') {
-            isLastnameValid = validateLastname(event.target.value);
-        }
-        if (element === 'email') {
-            isEmailVald = validateEmail(event.target.value);
-        }
-        if (element === 'password') {
-            isPasswordValid = validatePassword(event.target.value);
-        }
-
         this.setState({
             [event.target.name]: event.target.value,
-            isFirstNameValid,
-            isLastnameValid,
-            isEmailVald,
-            isPasswordValid
+            isFirstNameValid: element === 'firstname' ? validateFirstname(event.target.value) : this.state.isFirstNameValid,
+            isLastnameValid: element === 'lastname' ? validateLastname(event.target.value) : this.state.isLastnameValid,
+            isEmailVald: element === 'email' ? validateEmail(event.target.value) : this.state.isEmailVald,
+            isPasswordValid: element === 'password' ? validatePassword(event.target.value) : this.state.isPasswordValid
         });
     };
 
     formValidate = (event) => {
         const element = event.target.name;
-        let isFirstNameValid = this.state.isFirstNameValid;
-        let isLastnameValid = this.state.isLastnameValid;
-        let isEmailVald = this.state.isEmailVald;
-        let isPasswordValid = this.state.isPasswordValid;
-
-        if (element === 'firstname') {
-            isFirstNameValid = validateFirstname(event.target.value);
-        }
-        if (element === 'lastname') {
-            isLastnameValid = validateLastname(event.target.value);
-        }
-        if (element === 'email') {
-            isEmailVald = validateEmail(event.target.value);
-        }
-        if (element === 'password') {
-            isPasswordValid = validatePassword(event.target.value);
-        }
-
         this.setState({
-            isFirstNameValid,
-            isLastnameValid,
-            isEmailVald,
-            isPasswordValid
+            isFirstNameValid: element === 'firstname' ? validateFirstname(event.target.value) : this.state.isFirstNameValid,
+            isLastnameValid: element === 'lastname' ? validateLastname(event.target.value) : this.state.isLastnameValid,
+            isEmailVald: element === 'email' ? validateEmail(event.target.value) : this.state.isEmailVald,
+            isPasswordValid: element === 'password' ? validatePassword(event.target.value) : this.state.isPasswordValid
         });
     };
 
