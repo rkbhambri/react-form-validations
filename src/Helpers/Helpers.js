@@ -1,4 +1,12 @@
 
+export const isEmpty = (item) => {
+    let isValid = false;
+    if (item.trim() === '') {
+        isValid = true;
+    }
+    return isValid;
+};
+
 export const validateFirstname = (firstname) => {
     let isFirstnameValid = false;
     if (firstname.trim() !== '') {
