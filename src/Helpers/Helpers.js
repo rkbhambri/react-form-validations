@@ -40,4 +40,3 @@ export const validatePassword = (password) => {
     }
     return isPasswordValid;
 };
-
